@@ -1,0 +1,439 @@
+<div class="container wrapper changelog" id="body">
+<div class="row">
+<div class="col-md-9 col-xs-12" style="padding: 0;">
+<ul class="nav nav-tabs" style="border-bottom-width: 5px; border-bottom-color: #0072c6; border-bottom-style: solid; margin: 0;">
+<li class="col-xs-6 col-sm-6 col-md-4" id="releaseTab" role="presentation" style="background-color: #0072c6; margin: 0;">
+<h1 style="line-height: 50px; font-size: 2em;"><a id="released" style="color: #fff; border-radius: 0; margin-left: 1%;" href="#" aria-label="V1.0 Tab"> V1.0 </a></h1>
+</li>
+<li class="col-xs-6 col-sm-6 col-md-4" id="betaTab" role="presentation" style="margin: 0; font-size: 2em;">
+<h1 style="line-height: 50px;"><a id="beta" style="color: #0072c6; border-radius: 0; margin-left: 1%;" href="#" aria-label="Beta Tab"> Beta</a></h1>
+</li>
+</ul>
+</div>
+</div>
+<div class="row" id="dateContent">
+<div class="col-md-9 col-xs-12" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px;">
+<h1>May 2016</h1>
+<h2></h2>
+<h2 style="margin-bottom: 5px;"><span>Messages</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>inferenceClassification</em> and <em>extensions</em> to <em>messages</em>.</li>
+<li class="beta">- Added <em>wellknownname</em> to <em>contactFolder</em>.</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>EventMessages</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>inferenceClassification</em> and <em>extensions</em> to <em>eventMessages</em>.</li>
+<li class="beta">- Added <em>responseRequested</em> to <em>eventMessageRequest</em>.</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>Contact</span></h2>
+<div style="padding-left: 20px;">
+<p class="release"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+</ul>
+</div>
+<h2 class="release" style="margin-bottom: 5px;"><span>Event</span></h2>
+<div style="padding-left: 20px;">
+<p class="release"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+</ul>
+</div>
+<h2 class="release" style="margin-bottom: 5px;"><span>Post</span></h2>
+<div style="padding-left: 20px;">
+<p class="release"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>User</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>inferenceClassification</em> resource type.</li>
+<li class="beta">- Added <em>timeZone</em> to <em>mailboxsettings</em>.</li>
+<li class="beta">- Added API <em>findMeetingTimesOLD </em> to <em>user</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Directory</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong> Breaking Changes</strong></p>
+<ul class="contentlist">
+<li class="beta">- <em>settingTemplateId</em> is renamed to <em>templateId</em>. This change will take effect from May 19th, 2016.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Calender</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Breaking Changes</strong></p>
+<ul class="contentlist">
+<li class="beta">- Changes to <em>findMeetingTimes</em> API, find more information on our blog post. <a href="http://dev.office.com/microsoft-graph-findmeetingtimes-api-update">http://dev.office.com/microsoft-graph-findmeetingtimes-api-update</a>. This change will take effect from May 19th, 2016.</li>
+</ul>
+</div>
+<h1>April 2016</h1>
+<h2></h2>
+<h2 style="margin-bottom: 5px;"><span>General</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">- Added support for PATCH request against structural properties. For example
+<pre><code> PATCH /me/mailboxSettings </code></pre>
+</li>
+<li>- Support for honoring <em>Accept-Encoding:gzip</em></li>
+<!-- <li>- Support for <em>odata.bind</em>.</li> -->
+<li class="beta">- Azure Active Directory is now used as a fallback for <code>/beta/users/id/photo</code> requests when the Outlook is unable to service the request for cases like the user has no mailbox license or tenant does not have an Exchange Online subscription. NOTE: this fallback is available for both GET and PATCH.</li>
+<li>- Support for cast segment in expand path. For example,
+<pre><code> https://graph.microsoft.com/v1.0/me/messages?$expand=microsoft.graph.eventMessage/event </code></pre>
+</li>
+</ul>
+<p><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li class="beta">- Fixed the issue <code>beta/me/events?$filter=Extensions/any(f:f/Id+eq+'x') </code> failing with 400 and "Filter not supported".</li>
+<li class="beta">- Fixed the failure when Outlook extention contains a numeric array.</li>
+<li>- Fixed the issue that OneDrive createLink requests failing with 500 and "Unsupported extension property type."</li>
+<li class="beta">- Fix processQuery action bound to <em>Microsoft.ExcelServices.Workbook</em> with better support for <em>Edm.Stream</em> as a return type of actions.</li>
+</ul>
+</div>
+
+
+<h1>March 2016</h1>
+<h2></h2>
+<h2 style="margin-bottom: 5px;"><span>Subscriptions</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li>- Webhooks are now GA on V1.0 endpoint via the <em>/Subscriptions</em> resource. Create, Read, Renew and Delete subscriptions to receive notifications on data from Outlook and Office 365 group conversations.</li>
+<!--<li class="beta">- We&rsquo;ve revamped document insights from me/trendingAround to be <em>me/insights/trending</em> with a cleaner schema and direct <em>$expand</em> access to the underlying resource that is trending.</li>--></ul>
+<p class="beta"><strong>Changes</strong></p>
+<ul class="contentlist">
+<li class="beta">- Cleaned up subscription property names.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>General</span></h2>
+<div style="padding-left: 20px;">
+<p cla=""><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">- We&rsquo;ve added the capability to discover (through <em>directorySettingTemplates</em>) and override the default behavior (by creating a <em>setting</em> from the template) for entities and their associated functionality. Initially this only template provided is to control behaviors on Office groups.</li>
+<li>-Improve error message when resolving tenant alias and rejected JWT (AAD) tokens.</li>
+<li>-Return the location of the authorization service endpoint in the <em>www-authenticate</em> header when a request is received with an empty bearer token.</li>
+</ul>
+<p class="beta"><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li>- The ability to filter on an entity&rsquo;s id property is now fixed. Example
+<pre><code> GET https://graph.microsoft.com/v1.0/users?$filter=id+eq+'x' </code></pre>
+</li>
+<li>- Previously, any POST requests to service actions and functions require prefixing the action or function name with the microsoft.graph prefix. For example
+<pre><code> POST https://graph.microsoft.com/v1.0/me/Microsoft.Graph.getMemberGroups </code></pre>
+The prefix is now no longer required (although it can still be specified). So the following would now also work:
+<pre><code>POST https://graph.microsoft.com/v1.0/me/getMemberGroups</code></pre>
+</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Excel</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-We are adding new Excel REST APIs that lets you read and modify data in an Excel workbook. It is now possible to build smart apps that allows users to get value out of the content stored in an Excel workbook by providing insights into the data. Take advantage of analytical powers of Excel, create tables and charts and extract visually appealing chart image - all from within your app. see <a href="http://graph.microsoft.io/en-us/docs/api-reference/beta/resources/excel"> http://graph.microsoft.io/en-us/docs/api-reference/beta/resources/excel. </a></li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>DriveItem</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li>-Added <em>remoteItem</em> type to provide a link to an item in another drive.</li>
+<li>-Added <em>sharingInvitation</em> type to provide details of any associated sharing invitation for this permission.</li>
+<li>-Added <em>delta</em> function to track changes to items in a drive. Example
+<pre><code> GET /me/drive/items/{item-id}/delta </code></pre>
+</li>
+<li class="beta">-Added <em>invite</em> function to send a sharing invitation to an existing item. A sharing invitation creates a unique sharing link and sends an email to the recipient of the invitation that includes the sharing link.. Example
+<pre><code> POST /drive/items/{item-id}/invite </code></pre>
+</li>
+<li>-Added <em>copy</em> that creates a copy of a <em>driveItem</em> (including any children), under a new parent or with a new name.. Example
+<pre><code> POST /me/drive/items/{item-id}/copy </code></pre>
+</li>
+<li>-<em>conflictBehavior</em> instance attributes is now applicable to <em>driveItem</em>.</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>Permission</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li>-Added <em>sharingInvitation</em> property to provide details of any associated sharing invitation for this permission.</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>Drive</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li>-Added <em>recent</em> function to list a set of items that have been recently used by the signed in user. This list includes items that are in the user's drive as well as items they have access tofrom other drives. Example
+<pre><code> GET /me/drive/recent </code></pre>
+</li>
+<li>-Added <em>sharedWithMe</em> function to list the set of items that are shared with the current user. Example
+<pre><code> GET /me/drive/sharedWithMe </code></pre>
+</li>
+</ul>
+</div>
+<h2 style="margin-bottom: 5px;"><span>Messages</span></h2>
+<div style="padding-left: 20px;">
+<p><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="release">- Added <em>mobilePhone</em> property.</li>
+<li>-Added <em>internetMessageId</em> property. The message ID in the format specified by <a href="http://www.ietf.org/rfc/rfc2822.txt">RFC2822.</a></li>
+</ul>
+<p class="beta"><strong>Changes</strong></p>
+<ul class="contentlist">
+<li class="beta">-Renamed <em>mobilePhone1</em> property to <em>mobilePhone</em>.</li>
+<li class="beta">-<em>createReply</em> and <em>createReplyAll </em> take new parameter <em>Message</em> and <em>comment</em>.</li>
+<li class="beta">-<em>createForward </em> takes new parameter <em>Message </em>, <em>ToRecipients</em> and <em>comment</em>.</li>
+<li class="beta">-<em>reply</em>, <em>replyAll</em>and <em>forward</em> take new parameter <em>Message</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Event Messages</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added <em>startDateTime</em>, <em>endDateTime</em>, <em>location</em>, <em>type</em>, <em>recurrence</em>, <em>isOutOfDate</em>, <em>conversationIndex</em>, <em>unsubscribe</em>, <em>unsubscribeData</em>, <em>unsubscribeEnabled</em> and <em>flag</em> properties to <em>eventmessage</em> object.</li>
+<li class="beta">- Added <em>singleValueExtendedProperties</em> and <em>multiValueExtendedProperties</em> properties.</li>
+<li class="beta">- Added new method <em>unsubscribe</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Mail Folder</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added <em>wellKnownName</em> and <em>userConfigurations</em> properties.</li>
+<li class="beta">-Added <em>singleValueExtendedProperties</em> and <em>multiValueExtendedProperties</em> properties</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Event</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added new property <em>onlineMeetingUrl</em> and new method <em>cancel</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Person</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added new properties <em>birthday</em>, <em>personNotes</em>, <em>isFavorite</em>, <em>phones</em>, <em>permission</em>, <em>postalAddresses</em>,<em>websites</em>,<em>yomiCompany</em>, <em>department</em>, <em>profession</em>, <em>mailboxType</em> and <em>personType</em>.</li>
+<li class="beta">-Added new enum types <em>physicalAddressType</em>, <em>webSite </em>, <em>phone</em> and <em>webSiteType</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Reference Attachment</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added new properties <em>sourceUrl</em>, <em>providerType</em>, <em>thumbnailUrl</em>, <em>previewUrl</em>, <em>permission</em> and <em>isFolder</em>.</li>
+<li class="beta">-Added <em>singleValueExtendedProperties</em> and <em>multiValueExtendedProperties</em> properties</li>
+<li class="beta">-Added new enum types <em>referenceAttachmentProvider </em> and <em>referenceAttachmentPermission</em>.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>User</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added <em>mailboxSettings</em> property and corresponding types.</li>
+</ul>
+</div>
+<h2 class="beta" style="margin-bottom: 5px;"><span>Calender</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta"><strong>Addition</strong></p>
+<ul class="contentlist">
+<li class="beta">-Added <em>singleValueExtendedProperties</em> and <em>multiValueExtendedProperties</em> properties</li>
+<li class="beta">-Added <em>suggestionHint</em> property to <em>meetingTimeCandidate </em>.</li>
+<li class="beta">-Added <em>locationUri</em> property to <em>location</em>.</li>
+<li class="beta">-Added <em>type</em> and <em>postOfficeBox</em> to <em>physicalAddress </em>.</li>
+</ul>
+<p class="beta"><strong>Changes</strong></p>
+<ul class="contentlist">
+<li class="beta">-<em>findMeetingTimes</em> now takes new parameter <em>ReturnSuggestionHints</em>.</li>
+<li class="beta">-<em>findMeetingTimes</em> now returns a collection of <em>meetingTimeCandidate</em>&gt;.</li>
+</ul>
+</div>
+<h1 id="february-2016">February 2016</h1>
+<h2></h2>
+<h2 id="Users" style="margin-bottom: 5px;"><span>Users</span></h2>
+<div style="padding-left: 20px;">
+<p id="changes-applies-to-users-entity-in-beta"><strong>Changes</strong></p>
+<ul class="contentlist">
+<li>- <em>displayName</em> is now returned for Microsoft accounts.</li>
+</ul>
+</div>
+<h2 id="DriveItem" style="margin-bottom: 5px;"><span>DriveItem</span></h2>
+<div style="padding-left: 20px;">
+<p id="additions-applies-to-driveItem-entity-in-beta"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>-New <em>remoteItem</em> property on driveItem for Microsoft accounts.</li>
+</ul>
+</div>
+<h2 id="General" style="margin-bottom: 5px;"><span>General</span></h2>
+<div style="padding-left: 20px;">
+<p class="beta" id="deletions-applies-to-general-entity-in-beta"><strong>Deletions</strong></p>
+<ul class="contentlist">
+<li class="beta">-Removed various unimplemented types from the beta schema to more closely match the 1.0 schema.</li>
+</ul>
+<p id="changes-applies-to-general-entity-in-beta"><strong>Changes</strong></p>
+<ul class="contentlist">
+<li>-<em>/me/drive</em> now works for both Microsoft accounts and Work and School accounts</li>
+<li>-Drive requests for accounts whose OneDrive storage was provisioned on demand work more reliably and work in more scenarios where tenant default SharePoint sites use non-standard names.</li>
+</ul>
+</div>
+<h2 class="beta" id="Subscriptions" style="margin-bottom: 5px;"><span>Subscriptions</span></h2>
+<div class="beta" style="padding-left: 20px;">
+<p id="additions-applies-to-subscriptions-entity-in-beta"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>- notificationUrl validation on subscription creation - see <a href="http://dev.office.com/blogs/Microsoft-Graph-WebHooks-Update-January-2016"> http://dev.office.com/blogs/Microsoft-Graph-WebHooks-Update-January-2016.</a></li>
+<li>- Subscription entities can now be deleted:</li>
+</ul>
+<pre class="beta"><code>DELETE https://graph.microsoft.com/beta/subscriptions/<subscriptionid>
+</subscriptionid></code></pre>
+</div>
+<h1 id="january-2016">January 2016</h1>
+<h2></h2>
+<h2 class="release" id="v1contact" style="margin-bottom: 5px;"><span>Contacts</span></h2>
+<div class="release" style="padding-left: 20px;">
+<p id="additions-applies-to-contact-entity-in-v10"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>- Added <span class="impcontent">mobilePhone</span> property to personal contacts entity-set.</li>
+</ul>
+</div>
+<h2></h2>
+<h2 id="directoryobjects" style="margin-bottom: 5px;"><span>directoryObjects</span></h2>
+<div style="padding-left: 20px;">
+<p id="fixes-applies-to-directoryobjects-entity-in-beta-and-v10"><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li>- Fixed calling actions that are bound to directoryObjects, which were failing with the following error: &ldquo;The return type from the operation is not possible with the given entity set.&rdquo;. This applies to the following actions: <em>microsoft.graph.checkMemberObjects</em>, <em>microsoft.graph.getMemberObjects</em>, <em>microsoft.graph.checkMemberGroups</em>, <em>microsoft.graph.assignLicense</em>, <em>microsoft.graph.changePassword</em>.</li>
+</ul>
+</div>
+<h2></h2>
+<h1 id="december-2015">December 2015</h1>
+<h2 id="general" style="margin-bottom: 5px;"><span>General</span></h2>
+<div style="padding-left: 20px;">
+<p id="fixes-applies-to-all-entities-in-beta-and-v10"><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li>- Fixed requests using <span class="impcontent">$filter</span> expressions that specified the same property more than once, which were failing with the following 500 error: &ldquo;An item with the same key has already been added&rdquo;.</li>
+<li>- Fixed case insensitivity for action parameter names and values.</li>
+<li>- Fixed request processing for payloads containing null values for some embedded complex properties, which were failing with a null reference exception. An example of a previously failing request is:</li>
+</ul>
+<pre><code>PATCH /me/events/eventId
+{
+    &ldquo;location&rdquo;:{
+        &ldquo;displayName&rdquo;: &rdquo;pluto&rdquo;,
+        &rdquo;address&rdquo;: null
+    }
+}
+</code></pre>
+<p id="additions-applies-to-all-entities-in-beta-and-v10"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>- Added support for complex type property sorting and filtering. Examples:</li>
+</ul>
+<pre class="release"><code>https://graph.microsoft.com/v1.0/me/messages?$orderBy=From/EmailAddress/Address
+https://graph.microsoft.com/v1.0/me/messages?$filter=From/EmailAddress/Address eq 'jon@contoso.com'
+</code></pre>
+<pre class="beta"><code>https://graph.microsoft.com/beta/me/messages?$orderBy=From/EmailAddress/Address
+https://graph.microsoft.com/beta/me/messages?$filter=From/EmailAddress/Address eq 'jon@contoso.com'
+</code></pre>
+<ul class="contentlist">
+<li>- Added <span class="impcontent">authorization_uri</span> property in the www-authenticate header on a 401 response. This uri can be used to start the token acquisition flow.</li>
+<li>- Improved error messages across users and groups</li>
+</ul>
+</div>
+<h2></h2>
+<h2 id="user" style="margin-bottom: 5px;"><span>Users</span></h2>
+<div style="padding-left: 20px;">
+<p id="fixes-applies-to-user-entity-in-beta-and-v10"><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li>- Fixed being able to select certain user properties on other users, when referencing the user by user principal name (UPN). For example:</li>
+</ul>
+<pre class="release"><code>https://graph.microsoft.com/v1.0/users/anotherUser@contoso.com?$select=aboutMe
+</code></pre>
+<pre class="beta"><code>https://graph.microsoft.com/beta/users/anotherUser@contoso.com?$select=aboutMe
+</code></pre>
+<ul class="contentlist">
+<li>- Fixed calling the <em>microsoft.graph.reminderView</em> user bound function, which was failing with the following error: &ldquo;Could not find a property named &lsquo;businessPhones&rsquo; on type &lsquo;Microsoft.OutlookServices.Reminder&rsquo;&ldquo;.</li>
+<li class="release">- Fixed user creation and update (POST/PATCH /v1.0/users), which was failing with a 400 error.</li>
+</ul>
+</div>
+<h2></h2>
+<h2 id="groups" style="margin-bottom: 5px;"><span>Groups</span></h2>
+<div style="padding-left: 20px;">
+<p id="fixes-applies-to-groups-entity-in-beta-and-v10"><strong>Fixes</strong></p>
+<ul class="contentlist">
+<li>- Fixed calling the following group actions: <em>microsoft.graph.addFavorite</em>, <em>microsoft.graph.removeFavorite</em> and <em>microsoft.graph.resetUnseenCount</em>.</li>
+</ul>
+</div>
+<h2></h2>
+<h2 class="beta" id="betacontact" style="margin-bottom: 5px;"><span>Contacts</span></h2>
+<div class="beta" style="padding-left: 20px;">
+<p id="additions-applies-to-contact-entity-in-beta"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>- Added <span class="impcontent">mobilePhone</span> property to personal contacts entity-set.</li>
+</ul>
+</div>
+<h2></h2>
+<h2 class="beta" id="messages" style="margin-bottom: 5px;"><span>Messages</span></h2>
+<div class="beta" style="padding-left: 20px;">
+<p id="additions-applies-to-messages-entity-in-beta"><strong>Additions</strong></p>
+<ul class="contentlist">
+<li>- Added <span class="impcontent">eventMessageRequest</span> subtype of <span class="impcontent">eventMessage</span> and <span class="impcontent">startDateTime</span>, <span class="impcontent">endDateTime</span>, <span class="impcontent">location</span>, <span class="impcontent">type</span>, <span class="impcontent">recurrence</span> and <span class="impcontent">isOutOfDate</span> properties to <span class="impcontent">eventMessage</span> type.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>
+<script>// <![CDATA[
+$('#banner-image').css('height', '150px');
+$('.no-description-banner-contents').css('top', '30px');
+$('.full-width-container').css('background-color', '#E4E4E4');
+$(".no-description-banner-contents").css("background-color", "transparent");
+$(".no-description-banner-title").css("font-family", "'Segoe UI',Helvetica,Arial,sans-serif");
+$('.impcontent').css('font-family', 'courier');
+$('.impcontent').css('font-size', '18px');
+$('.impcontent').css('color', '#008272');
+$('pre').css('border-radius', '0');
+$('.contentlist').css('margin', '0');
+$('.contentlist li').attr('style', 'list-style: none !important; margin-bottom: 10px;');
+
+$(document).ready(function() {
+    hideBeta();
+});
+
+var mq = window.matchMedia("(max-width: 900px)");
+if (mq.matches) {
+    $(".no-description-banner-title").css("top", "14px");
+    $(".no-description-banner-title").css("color", "#fff");
+} else {
+    $(".no-description-banner-title").css("top", "0");
+    $(".no-description-banner-title").css("color", "#fff");
+}
+
+
+document.getElementById("released").addEventListener("click", hideBeta);
+document.getElementById("beta").addEventListener("click", hideRelease);
+
+function hideBeta() {
+    $('.beta').hide();
+    $('.release').show();
+    $('#releaseTab').css('background-color', '#0072c6');
+    $('#releaseTab a').css('color', '#fff');
+    $('#betaTab').css('background-color', '#E4E4E4');
+    $('#betaTab a').css('color', '#0072c6');
+}
+
+function hideRelease() {
+    $('.release').hide();
+    $('.beta').show();
+    $('#releaseTab').css('background-color', '#E4E4E4');
+    $('#releaseTab a').css('color', '#0072c6');
+    $('#betaTab').css('background-color', '#0072c6');
+    $('#betaTab a').css('color', '#fff');
+}
+// ]]></script>
+</p>
