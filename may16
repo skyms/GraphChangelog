@@ -35,21 +35,21 @@
 <div style="padding-left: 20px;">
 <p class="release"><strong>Addition</strong></p>
 <ul class="contentlist">
-<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+<li class="release">- Added <em>extensions</em>, which is an abstract type to support the OData v4 open type openTypeExtension.</li>
 </ul>
 </div>
 <h2 class="release" style="margin-bottom: 5px;"><span>Event</span></h2>
 <div style="padding-left: 20px;">
 <p class="release"><strong>Addition</strong></p>
 <ul class="contentlist">
-<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+<li class="release">- Added <em>extensions</em>, which is an abstract type to support the OData v4 open type openTypeExtension.</li>
 </ul>
 </div>
 <h2 class="release" style="margin-bottom: 5px;"><span>Post</span></h2>
 <div style="padding-left: 20px;">
 <p class="release"><strong>Addition</strong></p>
 <ul class="contentlist">
-<li class="release">- Added <em>extensions</em>, which is abstract type to support the OData v4 open type openTypeExtension.</li>
+<li class="release">- Added <em>extensions</em>, which is an abstract type to support the OData v4 open type openTypeExtension.</li>
 </ul>
 </div>
 <h2 style="margin-bottom: 5px;"><span>User</span></h2>
